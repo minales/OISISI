@@ -37,6 +37,7 @@ public class PredmetiActionListener  implements ActionListener {
 	        tablePredmeti = new JTable(data1, columnNames1);
 	        tablePredmeti.setGridColor(Color.BLACK);
 	        tablePredmeti.setRowSelectionAllowed(true);
+	        tablePredmeti.setAutoCreateRowSorter(true);//sortiranje rastuce-opadajuce
 	        
 	        JScrollPane sp = new JScrollPane(tablePredmeti, 
 	                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
