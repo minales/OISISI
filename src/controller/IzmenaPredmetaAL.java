@@ -16,6 +16,7 @@ import javax.swing.SpringLayout;
 import model.Predmet;
 import model.Profesor;
 import view.GlavniProzor;
+import view.SelectBar;
 
 public class IzmenaPredmetaAL implements ActionListener{
 
@@ -210,7 +211,8 @@ public class IzmenaPredmetaAL implements ActionListener{
 					predmet.setS(sifra.getText());
 					predmet.setSemestar(semestar.getSelectedItem().toString());
 					
-					
+
+					SelectBar.tb3.doClick();
 					dodaj.dispose();
 				}
 				

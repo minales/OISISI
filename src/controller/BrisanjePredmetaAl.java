@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
 import view.GlavniProzor;
+import view.SelectBar;
 
 public class BrisanjePredmetaAl implements ActionListener{
 
@@ -37,17 +38,7 @@ public class BrisanjePredmetaAl implements ActionListener{
 		}
 		catch (Exception e) {}
 		
-
-
-		/*Dimension screen=Toolkit.getDefaultToolkit().getScreenSize();
-		PredmetiActionListener.tablePredmeti.revalidate();
-		PredmetiActionListener.tablePredmeti.updateUI();
-		PredmetiActionListener.tablePredmeti.repaint();
-		JScrollPane sp = new JScrollPane(PredmetiActionListener.tablePredmeti, 
-                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        sp.setPreferredSize(new Dimension(screen.width/2, 336));
-		GlavniProzor.setDesno(sp);*/
+		SelectBar.tb3.doClick();
 		
 		
 	}

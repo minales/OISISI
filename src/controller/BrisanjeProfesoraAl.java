@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import view.GlavniProzor;
+import view.SelectBar;
 
 public class BrisanjeProfesoraAl implements ActionListener{
 
@@ -24,6 +25,8 @@ public class BrisanjeProfesoraAl implements ActionListener{
 							 JOptionPane.YES_NO_OPTION);
 						if(result == JOptionPane.YES_OPTION) {
 						GlavniProzor.getRp().profesori.remove(a);
+
+						SelectBar.tb2.doClick();
 						}
 						
 				}

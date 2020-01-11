@@ -18,7 +18,7 @@ public class SelectBar extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public final JToggleButton tb1,tb2,tb3;
+	public static JToggleButton tb1,tb2,tb3;
 	
 	public SelectBar() {
 		

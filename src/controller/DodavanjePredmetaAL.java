@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -18,6 +19,7 @@ import javax.swing.SpringLayout;
 import model.Predmet;
 import model.Profesor;
 import view.GlavniProzor;
+import view.SelectBar;
 
 public class DodavanjePredmetaAL implements ActionListener{
 	Profesor p;
@@ -158,7 +160,8 @@ public class DodavanjePredmetaAL implements ActionListener{
 			}
 			
 		});
-		ok.addActionListener(new ActionListener() {
+		
+		AbstractAction buttonPressed = new AbstractAction(){
 	
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -186,9 +189,16 @@ public class DodavanjePredmetaAL implements ActionListener{
 					System.out.println("predmet:" + GlavniProzor.getRp().predmeti.get(i).getNaziv());
 				}
 				dodaj.dispose();
+
+				SelectBar.tb3.doClick();
 			}
+		};
 			
-		});
+		
+
+		ok.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER,0), "Enter_pressed");
+		ok.getActionMap().put("Enter_pressed", buttonPressed);
+		ok.addActionListener(buttonPressed);
 }
 	
 	private static void validateInput(JTextField field)

@@ -17,8 +17,12 @@ import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 
+import controller.BrisanjePredmetaAl;
+import controller.BrisanjeProfesoraAl;
 import controller.DodavanjePredmetaAL;
+import controller.IzmenaPredmetaAL;
 import controller.SearchPredmetiAl;
+import controller.SearchProfesori;
 import model.RoundButton;
 /*
 import controller.EditAction;
@@ -163,15 +167,12 @@ public class ToolBar extends JToolBar {
 		r.addActionListener(np);
 		SearchPredmetiAl sp=new SearchPredmetiAl();
 		p.addActionListener(sp);
-		/*NovoActionListener nal=new NovoActionListener();
-		n.addActionListener(nal);
-		EditAction ea=new EditAction();
-		e.addActionListener(ea);
-		RemoveNodeAction rna=new RemoveNodeAction();
-		d.addActionListener(rna);
-		KreirajActionListener kal=new KreirajActionListener();
-		i.addActionListener(kal);
-		*/
+		IzmenaPredmetaAL izmeni=new IzmenaPredmetaAL();
+		e.addActionListener(izmeni);
+		BrisanjePredmetaAl obrisi=new BrisanjePredmetaAl();
+		d.addActionListener(obrisi);
+		SearchProfesori bp=new SearchProfesori();
+		p.addActionListener(bp);
 
 		setFloatable(true);
 		setBackground(new Color(238, 213, 242));

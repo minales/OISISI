@@ -15,6 +15,7 @@ import view.GlavniProzor;
 public class PredmetiActionListener  implements ActionListener {
 	
 	public static JTable tablePredmeti;
+	public static JScrollPane sp;
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -39,7 +40,7 @@ public class PredmetiActionListener  implements ActionListener {
 	        tablePredmeti.setRowSelectionAllowed(true);
 	        tablePredmeti.setAutoCreateRowSorter(true);//sortiranje rastuce-opadajuce
 	        
-	        JScrollPane sp = new JScrollPane(tablePredmeti, 
+	        sp = new JScrollPane(tablePredmeti, 
 	                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 	                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	        sp.setPreferredSize(new Dimension(screen.width/2, 336));

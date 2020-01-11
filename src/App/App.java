@@ -101,7 +101,7 @@ public class App {
 		 Profesor p=new Profesor("Petar","Peric",2,3,4,"puskinova","bulevar","a","a","d");
 	 	 GlavniProzor.getRp().profesori.add(p);
 		 
-		 GlavniProzor glavniProzor = new GlavniProzor();
+		 //GlavniProzor glavniProzor = new GlavniProzor();
 				 
 	 	 GlavniProzor.getInstance().setVisible(true);
 	 	 
