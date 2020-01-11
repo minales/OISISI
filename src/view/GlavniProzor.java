@@ -48,6 +48,7 @@ import model.Node;
 import model.Profesor;
 import model.RadniProstor;
 import App.App;
+import controller.ProfesoriActionListener;
 import view.TreeRendered;
 
 
@@ -60,6 +61,7 @@ public class GlavniProzor extends JFrame {
 	public ToolBar toolBar;
 	public MenuBar menuBar;
 	public StatusBar statusBar;
+	public SelectBar select;
 	
 	private JSplitPane splitPane;
 	private static JTree tree;
@@ -98,22 +100,8 @@ public class GlavniProzor extends JFrame {
 		menuBar = new MenuBar();
 		toolBar = new ToolBar();
 		statusBar = new StatusBar();
+		select= new SelectBar();
 		
-		JPanel select=new JPanel(new FlowLayout());
-		select.setPreferredSize(new Dimension(panel.getWidth(), 40));
-		select.setBackground(new Color(226,255,253));
-		
-		final JToggleButton tb1 = new JToggleButton("Studenti");
-		final JToggleButton tb2 = new JToggleButton("Profesori");
-		final JToggleButton tb3 = new JToggleButton("Predmeti");
-		tb1.setPreferredSize(new Dimension(140, 34));
-		tb2.setPreferredSize(new Dimension(140, 34));
-		tb3.setPreferredSize(new Dimension(140, 34));
-		select.add(tb1);
-		select.add(tb2);
-		select.add(tb3);
-		
-		select.setSize(screen.width, 40);
 		
 		panel.add(menuBar, BorderLayout.NORTH);
 		panel.add(toolBar, BorderLayout.CENTER);
@@ -202,16 +190,6 @@ public class GlavniProzor extends JFrame {
 
 		desno.add(sp1,c);
 		
-        tb2.addActionListener(new ActionListener() {
-	         @Override
-	         public void actionPerformed(ActionEvent e) {
-	        	//getInstance();
-	     		desno.removeAll();
-	     		desno.add(sp1);
-	     		desno.revalidate();
-	     		desno.repaint();
-	         }
-	      });
 		
 		glavniPanel.add(panel, BorderLayout.NORTH);
 		glavniPanel.add(getDesno(),BorderLayout.CENTER);
@@ -237,7 +215,7 @@ public class GlavniProzor extends JFrame {
 	private JPanel getDesno() {
 		return desno;
 	}
-	public static void setDesno(JPanel f) {
+	public static void setDesno(JScrollPane f) {
 		getInstance();
 		GlavniProzor.desno.removeAll();
 		GlavniProzor.desno.revalidate();

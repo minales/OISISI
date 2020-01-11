@@ -52,8 +52,8 @@ public class ProfesoriActionListener implements ActionListener {
 	        spp.setPreferredSize(new Dimension(screen.width/2, 336));
 	        
 	        GlavniProzor.setDesno(spp);
-	        GlavniProzor.ocistiGlavni(); 
-	        GlavniProzor.proba();
+	        GlavniProzor.ocistiDesno(); 
+	        //GlavniProzor.proba();
 	        
 	        
 	        System.out.println("aaaaaaaaaa");

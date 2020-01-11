@@ -12,14 +12,14 @@ public class Predmet extends ImenovanaKolekcija{
 	private ImageIcon ikonica;
 	private Profesor profesor;
 	private static List<Student> studenti;
-	private int godinaStudija;
+	private String godinaStudija;
 	public static final int MAX_VELICINA_IKONICE = 64;
 	
-	public Predmet (String naziv, Profesor k,String o, String v,ImageIcon i, int g) {
+	public Predmet (String naziv,String o, Profesor k, String v, String g) {
 		this.naziv = naziv;
 		this.setProfesor(k);
 		this.sifra=o;
-		this.ikonica=i;
+		//this.ikonica=i;
 		this.semestar=v;
 		studenti= new ArrayList<>();
 		this.godinaStudija=g;
@@ -104,11 +104,11 @@ public class Predmet extends ImenovanaKolekcija{
 			return studenti.indexOf(kolekcija);
 		}
 
-		public int getGodinaStudija() {
+		public String getGodinaStudija() {
 			return godinaStudija;
 		}
 
-		public void setGodinaStudija(int godinaStudija) {
+		public void setGodinaStudija(String godinaStudija) {
 			this.godinaStudija = godinaStudija;
 		}
 

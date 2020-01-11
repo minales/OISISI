@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 
+import controller.DodavanjePredmetaAL;
 import model.RoundButton;
 /*
 import controller.EditAction;
@@ -38,7 +39,7 @@ public class ToolBar extends JToolBar {
 
 		
 		KeyStroke keyadd = KeyStroke.getKeyStroke(KeyEvent.VK_A, Event.CTRL_MASK); 
-		Action performAdd = new AbstractAction("Add") {  
+		Action performAdd = new AbstractAction() {  
 		    /**
 			 * 
 			 */
@@ -53,7 +54,7 @@ public class ToolBar extends JToolBar {
 		n.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(keyadd, "performAdd"); 
 		
 		KeyStroke keyEdit = KeyStroke.getKeyStroke(KeyEvent.VK_E, Event.CTRL_MASK); 
-		Action performEdit = new AbstractAction("Edit") {  
+		Action performEdit = new AbstractAction() {  
 		    /**
 			 * 
 			 */
@@ -69,7 +70,7 @@ public class ToolBar extends JToolBar {
 		
 		
 		KeyStroke keyDelete = KeyStroke.getKeyStroke(KeyEvent.VK_D, Event.CTRL_MASK); 
-		Action performDelete = new AbstractAction("Delete") {  
+		Action performDelete = new AbstractAction() {  
 		    /**
 			 * 
 			 */
@@ -84,7 +85,7 @@ public class ToolBar extends JToolBar {
 		d.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(keyDelete, "performDelete");
 		
 		KeyStroke keySearch = KeyStroke.getKeyStroke(KeyEvent.VK_W, Event.CTRL_MASK); 
-		Action performSearch = new AbstractAction("Search") {  
+		Action performSearch = new AbstractAction() {  
 		    /**
 			 * 
 			 */
@@ -98,6 +99,21 @@ public class ToolBar extends JToolBar {
 		p.getActionMap().put("performSearch", performSearch);
 		p.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(keySearch, "performSearch");
 		
+		KeyStroke keyaddSubject = KeyStroke.getKeyStroke(KeyEvent.VK_P, Event.CTRL_MASK); 
+		Action performAddSubject = new AbstractAction() {  
+		    /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			public void actionPerformed(ActionEvent e) {
+		         System.out.println("addSubject");
+		    }
+		}; 
+		r = new JButton(performAddSubject);
+		r.getActionMap().put("performAddSubject", performAddSubject);
+		r.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(keyaddSubject, "performAddSubject"); 
+		
 		ImageIcon imageIcon = new ImageIcon("slike/add.jpg"); // load the image to a imageIcon
 		Image image = imageIcon.getImage(); // transform it 
 		Image newimg = image.getScaledInstance(34, 34,  java.awt.Image.SCALE_SMOOTH); 
@@ -110,6 +126,10 @@ public class ToolBar extends JToolBar {
 		Image i1 = ii1.getImage(); // transform it 
 		Image ni1 = i1.getScaledInstance(34, 34,  java.awt.Image.SCALE_SMOOTH); 
 		d.setIcon(new ImageIcon(ni1));
+		ImageIcon aa = new ImageIcon("slike/predmet.png"); // load the image to a imageIcon
+		Image a = aa.getImage(); // transform it 
+		Image na = a.getScaledInstance(34, 34,  java.awt.Image.SCALE_SMOOTH); 
+		r.setIcon(new ImageIcon(na));
 		//n.setBackground(new Color(226, 255, 253));
 		//r.setBackground(new Color(226, 255, 253));
 		//p.setBackground(new Color(226, 255, 253));
@@ -120,11 +140,13 @@ public class ToolBar extends JToolBar {
 		e.setToolTipText("Edit");
 		d.setToolTipText("Delete");
 		p.setToolTipText("Search");
+		r.setToolTipText("New Subject");
 		
 		add(n);
 		add(e);
 		add(d);
 		add(p);
+		add(r);
 		
 		add(Box.createGlue());
 		u= new JTextField(6);
@@ -135,6 +157,9 @@ public class ToolBar extends JToolBar {
 		u.setToolTipText("Enter text");
 		add(u);
 		add(p);
+		
+		DodavanjePredmetaAL np=new DodavanjePredmetaAL();
+		r.addActionListener(np);
 		
 		/*NovoActionListener nal=new NovoActionListener();
 		n.addActionListener(nal);

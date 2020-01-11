@@ -19,6 +19,7 @@ public class RadniProstor extends ImenovanaKolekcija {
    public RadniProstor(String ime){
 	   this.ime = ime;
 	   profesori = new ArrayList<>();
+	   predmeti =new ArrayList<>();
    }
    
    public void dodajProfesora(Profesor k){
