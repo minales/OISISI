@@ -18,6 +18,7 @@ import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 
 import controller.DodavanjePredmetaAL;
+import controller.SearchPredmetiAl;
 import model.RoundButton;
 /*
 import controller.EditAction;
@@ -32,7 +33,7 @@ public class ToolBar extends JToolBar {
 	 */
 	private static final long serialVersionUID = 1L;
 	public JButton n, r,e,d,p;
-	public JTextField u;
+	public static JTextField u;
 	
 
 	public ToolBar() {
@@ -160,7 +161,8 @@ public class ToolBar extends JToolBar {
 		
 		DodavanjePredmetaAL np=new DodavanjePredmetaAL();
 		r.addActionListener(np);
-		
+		SearchPredmetiAl sp=new SearchPredmetiAl();
+		p.addActionListener(sp);
 		/*NovoActionListener nal=new NovoActionListener();
 		n.addActionListener(nal);
 		EditAction ea=new EditAction();

@@ -180,7 +180,7 @@ public class DodavanjePredmetaAL implements ActionListener{
 				
 				GlavniProzor.getRp().predmeti.add(
 						new Predmet(naziv.getText(),sifra.getText()
-								,p,godina.getText(),semestar.getSelectedItem().toString()));
+								,p,semestar.getSelectedItem().toString(),godina.getText()));
 				
 				for(int i=0; i<GlavniProzor.getRp().predmeti.size();i++) {
 					System.out.println("predmet:" + GlavniProzor.getRp().predmeti.get(i).getNaziv());
