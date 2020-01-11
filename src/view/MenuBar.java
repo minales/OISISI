@@ -15,6 +15,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+import controller.IzmenaPredmetaAL;
+import controller.PredmetiActionListener;
+import model.Predmet;
+
 
 public class MenuBar extends JMenuBar {
 
@@ -47,20 +51,17 @@ public class MenuBar extends JMenuBar {
 		ed=new JMenuItem("Editovanje",KeyEvent.VK_E);
 		de=new JMenuItem("Brisanje",KeyEvent.VK_B);
 
-		k = new JMenuItem("Kompanija");
-		p = new JMenuItem("Proizvod");
-		par = new JMenuItem("Parametar");
-		ppar = new JMenuItem("Potparametar");
+		k = new JMenuItem("Profesor");
+		p = new JMenuItem("Predmet");
+		par = new JMenuItem("Student");
 		
-		k1 = new JMenuItem("Kompanija");
-		p1 = new JMenuItem("Proizvod");
-		par1 = new JMenuItem("Parametar");
-		ppar1 = new JMenuItem("Potparametar");
+		k1 = new JMenuItem("Profesor");
+		p1 = new JMenuItem("Predmet");
+		par1 = new JMenuItem("Student");
 		
-		k2 = new JMenuItem("Kompanija");
-		p2 = new JMenuItem("Proizvod");
-		par2 = new JMenuItem("Parametar");
-		ppar2 = new JMenuItem("Potparametar");
+		k2 = new JMenuItem("Profesor");
+		p2 = new JMenuItem("Predmet");
+		par2 = new JMenuItem("Student");
 		
 		n.setMnemonic(KeyEvent.VK_N);
 		ed.setMnemonic(KeyEvent.VK_E);
@@ -70,20 +71,21 @@ public class MenuBar extends JMenuBar {
 		sel.add(ed);
 		sel.add(de);
 		
+		
+		IzmenaPredmetaAL izmeni=new IzmenaPredmetaAL();
+		ed.addActionListener(izmeni);
+		
 		novo.add(k);
 		novo.add(p);
 		novo.add(par);
-		novo.add(ppar);
 		
 		edit.add(k1);
 		edit.add(p1);
 		edit.add(par1);
-		edit.add(ppar1);
 		
 		del.add(k2);
 		del.add(p2);
 		del.add(par2);
-		del.add(ppar2);
 
 		add(sel);
 		add(novo);

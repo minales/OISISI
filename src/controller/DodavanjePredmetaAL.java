@@ -171,6 +171,12 @@ public class DodavanjePredmetaAL implements ActionListener{
 						//pogresan profesor//dodavanje profesora
 						break;
 				}
+				if(p==null) {
+					
+					p=new Profesor(profesor.getText());
+					GlavniProzor.getRp().profesori.add(p);
+					System.out.println("dodao" + p.getIme());
+				}
 				
 				GlavniProzor.getRp().predmeti.add(
 						new Predmet(naziv.getText(),sifra.getText()

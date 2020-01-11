@@ -36,7 +36,7 @@ public class App {
 	        
 			 Properties props = new Properties();
 	            
-	            props.put("logoString", "InstaFram"); 
+	            props.put("logoString", "Sluzba"); 
 	            props.put("licenseKey", "INSERT YOUR LICENSE KEY HERE");
 	            
 	            props.put("selectionBackgroundColor", "255 237 251"); 
@@ -61,7 +61,7 @@ public class App {
 	            props.put("windowTitleColorLight", "255 247 253"); 
 	            props.put("windowTitleColorDark", "238 213 242"); 
 	            props.put("windowBorderColor", "255 247 253");
-	            props.put("logoString", "InstaFram");
+	            props.put("logoString", "Sluzba");
 	            
 	            props.put("foregroundColor", "53 5 61");
 	            props.put("backgroundColor", "255 237 246");

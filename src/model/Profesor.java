@@ -59,6 +59,10 @@ public class Profesor extends ImenovanaKolekcija {
 	public Profesor (){
 		
 	}
+
+	public Profesor (String i){
+		ime=i;
+	}
 	
 	public ImageIcon getIkonica() {
 		return ikonica;

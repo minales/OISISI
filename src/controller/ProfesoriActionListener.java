@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -52,9 +53,12 @@ public class ProfesoriActionListener implements ActionListener {
 	        spp.setPreferredSize(new Dimension(screen.width/2, 336));
 	        
 	        GlavniProzor.setDesno(spp);
-	        GlavniProzor.ocistiDesno(); 
+	        //GlavniProzor.ocistiDesno(); 
 	        //GlavniProzor.proba();
-	        
+	        GlavniProzor mf=GlavniProzor.getInstance();
+	        mf.select.add(new JButton("aaaaaaaaaaaaa"));
+	        mf.revalidate();
+	        mf.repaint();
 	        
 	        System.out.println("aaaaaaaaaa");
 		
