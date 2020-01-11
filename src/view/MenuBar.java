@@ -15,6 +15,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+import controller.BrisanjeAl;
 import controller.IzmenaPredmetaAL;
 import controller.PredmetiActionListener;
 import model.Predmet;
@@ -74,6 +75,8 @@ public class MenuBar extends JMenuBar {
 		
 		IzmenaPredmetaAL izmeni=new IzmenaPredmetaAL();
 		ed.addActionListener(izmeni);
+		BrisanjeAl obrisi=new BrisanjeAl();
+		de.addActionListener(obrisi);
 		
 		novo.add(k);
 		novo.add(p);
