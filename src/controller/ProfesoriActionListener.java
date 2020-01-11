@@ -17,6 +17,7 @@ import view.GlavniProzor;
 public class ProfesoriActionListener implements ActionListener {
 	
 	//private static GlavniProzor mf;
+	public static JTable tablep;
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -44,7 +45,7 @@ public class ProfesoriActionListener implements ActionListener {
 	        String[] columnNamesp = {"Ime", "Prezime","Datum rodjenja","Adresa stanovanja","Kontakt telefon",
 	        		"E-mail adresa","Adresa kancelarije","Broj licne karte","Titula","Zvanje",
 	        		"Spisak predmeta na kojima je profesor" }; 
-	        JTable tablep = new JTable(datap, columnNamesp);
+	        tablep = new JTable(datap, columnNamesp);
 	        tablep.setGridColor(Color.BLACK);
 	        
 	        JScrollPane spp = new JScrollPane(tablep, 

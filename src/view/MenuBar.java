@@ -15,7 +15,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-import controller.BrisanjeAl;
+import controller.BrisanjePredmetaAl;
+import controller.BrisanjeProfesoraAl;
 import controller.IzmenaPredmetaAL;
 import controller.PredmetiActionListener;
 import model.Predmet;
@@ -43,7 +44,7 @@ public class MenuBar extends JMenuBar {
 
 	public MenuBar() {
 
-		JMenu sel = new JMenu("Selektovano");
+		//JMenu sel = new JMenu("Selektovano");
 		JMenu novo = new JMenu("Novo");
 		JMenu edit = new JMenu("Editovanje");
 		JMenu del = new JMenu("Brisanje");
@@ -68,15 +69,17 @@ public class MenuBar extends JMenuBar {
 		ed.setMnemonic(KeyEvent.VK_E);
 		de.setMnemonic(KeyEvent.VK_B);
 		
-		sel.add(n);
+		/*sel.add(n);
 		sel.add(ed);
-		sel.add(de);
+		sel.add(de);*/
 		
 		
 		IzmenaPredmetaAL izmeni=new IzmenaPredmetaAL();
-		ed.addActionListener(izmeni);
-		BrisanjeAl obrisi=new BrisanjeAl();
-		de.addActionListener(obrisi);
+		p1.addActionListener(izmeni);
+		BrisanjePredmetaAl obrisi=new BrisanjePredmetaAl();
+		p2.addActionListener(obrisi);
+		BrisanjeProfesoraAl bp=new BrisanjeProfesoraAl();
+		k2.addActionListener(bp);
 		
 		novo.add(k);
 		novo.add(p);
@@ -90,7 +93,7 @@ public class MenuBar extends JMenuBar {
 		del.add(p2);
 		del.add(par2);
 
-		add(sel);
+		//add(sel);
 		add(novo);
 		add(edit);
 		add(del);

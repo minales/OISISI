@@ -24,8 +24,8 @@ public class Profesor extends ImenovanaKolekcija {
 	private RadniProstor radniProstor;
 	public static final int MAX_VELICINA_IKONICE = 64;
 	
-	public Profesor (String ime,String prezime,int dr,int licna,int telefon,String mail,String kancelarija,RadniProstor radniProstor,String stanovanje,String titula,String zvanje){
-		this.radniProstor = radniProstor;
+	public Profesor (String ime,String prezime,int dr,int licna,int telefon,String mail,String kancelarija,String stanovanje,String titula,String zvanje){
+		//this.radniProstor = radniProstor;
 		this.setIme(ime);
 		this.setAdresaStanovanja(stanovanje);
 		this.setPrezime(prezime);

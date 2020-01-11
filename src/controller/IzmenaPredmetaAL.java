@@ -22,6 +22,7 @@ public class IzmenaPredmetaAL implements ActionListener{
 		Profesor p;
 		Predmet predmet=null;
 		
+		
 		public IzmenaPredmetaAL() {
 			//this.predmet=p;
 		}
@@ -29,9 +30,10 @@ public class IzmenaPredmetaAL implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
+		String imePredmeta=null;
 		try {
 			 int i=PredmetiActionListener.tablePredmeti.getSelectedRow();
-			String imePredmeta=PredmetiActionListener.tablePredmeti.getValueAt(i, 0).toString();  //getModel().getValueAt(i,1).toString();
+			imePredmeta=PredmetiActionListener.tablePredmeti.getValueAt(i, 0).toString();  //getModel().getValueAt(i,1).toString();
 			System.out.println(imePredmeta + "ovde sam");
 			for (int a=0; a<GlavniProzor.getRp().predmeti.size(); a++) {
 				if (GlavniProzor.getRp().predmeti.get(a).getNaziv()==imePredmeta) {

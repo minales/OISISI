@@ -21,6 +21,7 @@ import com.jtattoo.plaf.smart.SmartLookAndFeel;
 
 //import controller.Controller;
 import model.AktivniRadniProstor;
+import model.Profesor;
 import model.RadniProstor;
 import view.GlavniProzor;
 import com.jtattoo.plaf.smart.SmartLookAndFeel;
@@ -97,9 +98,14 @@ public class App {
 		 
 		 UIManager.put("Panel.background", new Color(249, 237, 246));
 		 
+		 Profesor p=new Profesor("Petar","Peric",2,3,4,"puskinova","bulevar","a","a","d");
+	 	 GlavniProzor.getRp().profesori.add(p);
+		 
 		 GlavniProzor glavniProzor = new GlavniProzor();
 				 
 	 	 GlavniProzor.getInstance().setVisible(true);
+	 	 
+	 	 
 
 	}
 

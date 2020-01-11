@@ -11,7 +11,7 @@ import javax.swing.JScrollPane;
 
 import view.GlavniProzor;
 
-public class BrisanjeAl implements ActionListener{
+public class BrisanjePredmetaAl implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
