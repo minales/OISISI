@@ -26,7 +26,7 @@ public class DodavanjePredmetaAL implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		JFrame dodaj= new JFrame();
+		JFrame dodaj= new JFrame("Novi predmet");
 		dodaj.setSize(466, 444);
 		dodaj.setLocationRelativeTo(GlavniProzor.getInstance());
 		SpringLayout layout = new SpringLayout();

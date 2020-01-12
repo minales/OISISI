@@ -34,6 +34,9 @@ public class Predmet implements Serializable{
 		p=new Profesor("");
 		this.profesor=p;
 	}
+	public void NoviProfesoraSaPredmeta(String ime) {
+		this.profesor=new Profesor(ime);
+	}
 	
 	public String getNaziv(){
 		return naziv;

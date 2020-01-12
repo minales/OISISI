@@ -9,6 +9,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.AbstractCellEditor;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -78,6 +79,59 @@ public class ButtonPredmet extends AbstractCellEditor implements TableCellRender
 						
 					}
 				});
+				
+				dodaj.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						JFrame dodajSpisak=new JFrame("Dodavanje profesora na predmet");
+						dodajSpisak.setSize(466, 444);
+						dodajSpisak.setLocationRelativeTo(spisak);
+						dodajSpisak.setLayout(new BorderLayout());
+						
+						JButton cnc2=new JButton("odustani");
+						JButton dodaj2=new JButton("dodaj");
+						JPanel dugmici2=new JPanel();
+						
+						dugmici2.add(cnc2);
+						dugmici2.add(dodaj2);
+						dodajSpisak.add(dugmici2,BorderLayout.SOUTH);
+						
+						JPanel listaP=new JPanel();
+						JComboBox<String> pcb=new JComboBox();
+						for (int i=0; i<GlavniProzor.getRp().profesori.size();i++) {
+							pcb.addItem( GlavniProzor.getRp().profesori.get(i).getIme()); 
+						}
+						listaP.add(pcb);
+						dodajSpisak.add(listaP);
+						
+						cnc2.addActionListener(new ActionListener() {
+
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								spisak.dispose();
+								
+							}
+						});
+						dodaj2.addActionListener(new ActionListener() {
+
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								p.NoviProfesoraSaPredmeta(pcb.getSelectedItem().toString());
+								//System.out.println(pcb.getSelectedItem().toString());
+
+								dodajSpisak.dispose();
+								SelectBar.tb3.doClick();
+								
+							}
+						});
+						
+						spisak.dispose();
+						dodajSpisak.setVisible(true);
+					}
+					
+				});
+				
 				
 				obrisi.addActionListener(new ActionListener() {
 

@@ -91,6 +91,10 @@ public class Profesor implements Serializable {
 		public void UkloniProfesoraSaPredmeta(Profesor p) {
 			p=new Profesor("");
 		}
+		public Profesor NoviProfesoraSaPredmeta(String ime) {
+			Profesor p=new Profesor("ime");
+			return p;
+		}
 
 		
 		public RadniProstor getRadniProstor() {
