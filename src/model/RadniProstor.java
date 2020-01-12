@@ -20,15 +20,7 @@ public class RadniProstor extends ImenovanaKolekcija {
 	   this.ime = ime;
 	   profesori = new ArrayList<>();
 	   predmeti =new ArrayList<>();
-   }
-   public List<Profesor> getProfesori() {
-	   return profesori;
-   }
-   public List<Predmet> getPredmeti() {
-	   return predmeti;
-   }
-   public List<Student> getStudenti() {
-	   return studenti;
+	   studenti = new ArrayList<>();
    }
    
    public void dodajProfesora(Profesor k){
@@ -65,23 +57,24 @@ public class RadniProstor extends ImenovanaKolekcija {
 	}
 
 
+   @Override
+	public ImenovanaKolekcija getChild(int index) {		
+		return profesori.get(index);
+	}
+
+
 	@Override
 	public int getChildCount() {
 		return profesori.size();
 	}
 	
-	public String getIme(){
-		return ime;
-	}
-	@Override
-	public ImenovanaKolekcija getChild(int index) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	@Override
 	public int getIndexOfChild(ImenovanaKolekcija kolekcija) {
-		// TODO Auto-generated method stub
-		return 0;
+		return profesori.indexOf(kolekcija);
+	}
+	public String getIme(){
+		return ime;
 	}
 
 	
