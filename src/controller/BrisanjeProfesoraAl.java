@@ -12,7 +12,6 @@ public class BrisanjeProfesoraAl implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		Boolean t=false;
 		
 		try {
 			 int i=ProfesoriActionListener.tablep.getSelectedRow();
@@ -20,7 +19,7 @@ public class BrisanjeProfesoraAl implements ActionListener{
 	
 			for (int a=0; a<GlavniProzor.getRp().profesori.size(); a++) {
 				if (GlavniProzor.getRp().profesori.get(a).getIme()==imeProfesora) {
-					t=true;
+				
 					int result = JOptionPane.showConfirmDialog(null, "Da li ste sigurni da zelite da obrisete selektovani element?", 
 							 "Delete",
 							 JOptionPane.YES_NO_OPTION);
@@ -31,11 +30,8 @@ public class BrisanjeProfesoraAl implements ActionListener{
 						}
 						
 				}
-				
-			}
-			if (t==false)
-			{JOptionPane.showMessageDialog(GlavniProzor.getInstance(),"Nije nista selektovano.","error",JOptionPane.ERROR_MESSAGE);
-	
+				else
+					JOptionPane.showMessageDialog(GlavniProzor.getInstance(),"Nije nista selektovano.","error",JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		catch (Exception e) {}

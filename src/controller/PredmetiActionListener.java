@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import model.ButtonPredmet;
 import model.RadniProstor;
 import view.GlavniProzor;
 
@@ -30,18 +29,16 @@ public class PredmetiActionListener  implements ActionListener {
 			data1[i][2] =rp.predmeti.get(i).getProfesor().getIme();
 			data1[i][3] =rp.predmeti.get(i).getSemestar();
 			data1[i][4] =rp.predmeti.get(i).getGodinaStudija();
-			//data1[i][5]=null;
 			
 		         
 	}
 		
 	  
-	        String[] columnNames1 = {"Ime", "Sifra","Profesor","Semestar","Gopdina studija","lista" }; 
+	        String[] columnNames1 = {"Ime", "Sifra","Profesor","Semestar","Gopdina studija" }; 
 	        tablePredmeti = new JTable(data1, columnNames1);
 	        tablePredmeti.setGridColor(Color.BLACK);
 	        tablePredmeti.setRowSelectionAllowed(true);
 	        tablePredmeti.setAutoCreateRowSorter(true);//sortiranje rastuce-opadajuce
-	        new ButtonPredmet(tablePredmeti, 5);
 	        
 	        sp = new JScrollPane(tablePredmeti, 
 	                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
@@ -50,10 +47,6 @@ public class PredmetiActionListener  implements ActionListener {
 	        sp.setMinimumSize(new Dimension(screen.width/2, 336));
 	        
 	        GlavniProzor.setDesno(sp);
-		
-	}
-	public JScrollPane getSP() {
-		return sp;
 		
 	}
 

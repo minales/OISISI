@@ -16,7 +16,6 @@ public class BrisanjePredmetaAl implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		Boolean t=false;
 		
 		try {
 			 int i=PredmetiActionListener.tablePredmeti.getSelectedRow();
@@ -31,14 +30,12 @@ public class BrisanjePredmetaAl implements ActionListener{
 						if(result == JOptionPane.YES_OPTION) {
 						GlavniProzor.getRp().predmeti.remove(a);
 						}
-					t=true;	
+						
 				}
+				else
+					JOptionPane.showMessageDialog(GlavniProzor.getInstance(),"Nije nista selektovano.","error",JOptionPane.ERROR_MESSAGE);
 			}
-			if (t==false)
-				{JOptionPane.showMessageDialog(GlavniProzor.getInstance(),"Nije nista selektovano.","error",JOptionPane.ERROR_MESSAGE);
-		
-				}
-			}
+		}
 		catch (Exception e) {}
 		
 		SelectBar.tb3.doClick();
