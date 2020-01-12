@@ -1,14 +1,19 @@
 package model;
 
 import java.awt.Image;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
 
 
-public class Profesor extends ImenovanaKolekcija {
+public class Profesor implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String ime;
 	private String prezime;
 	private int datumRodjena;
@@ -78,40 +83,13 @@ public class Profesor extends ImenovanaKolekcija {
 		}
 		this.ikonica = ikonica;
 	}
-	
-	public void dodajPredmet(Predmet p){
-		   Profesor.getPredmeti().add(p);
-		   changedSet();
-		   notifyObservers();
-	   }
-	   
-	   public void obrisiPredmet(Predmet p) {
-		   getPredmeti().remove(p);
-		   changedSet();
-		   notifyObservers();
-	   }
-	   public void insert(int index, Predmet p) {
-		   getPredmeti().add(index, p);
-		   changedSet();
-		   notifyObservers();
-	   }
-
-
-		@Override
-		public int getChildCount() {
-			return getPredmeti().size();
-		}
 
 		public int getIndexOfChild(ImenovanaKolekcija kolekcija) {
 			return getPredmeti().indexOf(kolekcija);
 			
 		}
 
-		@Override
-		public ImenovanaKolekcija getChild(int index) {
-			// TODO Auto-generated method stub
-			return getPredmeti().get(index);
-		}
+		
 		public RadniProstor getRadniProstor() {
 			return radniProstor;
 		}

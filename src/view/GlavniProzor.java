@@ -52,6 +52,7 @@ import model.Node;
 import model.Profesor;
 import model.RadniProstor;
 import App.App;
+import controller.GlavniProzorListener;
 import controller.PredmetiActionListener;
 import controller.ProfesoriActionListener;
 import view.TreeRendered;
@@ -87,6 +88,8 @@ public class GlavniProzor extends JFrame {
 	}
 
 	public GlavniProzor() {
+		this.addWindowListener(new GlavniProzorListener());//serijalizacija
+		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Dimension screen=Toolkit.getDefaultToolkit().getScreenSize();
 		setSize(screen.width/4*3, screen.height/4*3);
@@ -109,33 +112,7 @@ public class GlavniProzor extends JFrame {
 		System.out.println(arp);
 		GlavniProzor.setRp(a.radniProstor);
 		
-		try
-        {    
-            //Saving of object in a file 
-			File f = new File("data.txt");
-            FileOutputStream file = new FileOutputStream(f); 
-            System.out.println("Object has been serialized????"); 
-            out = new ObjectOutputStream(file); 
-              
-            // Method for serialization of object 
-            for(int i=0;i< rp.profesori.size();i++) {
-
-                out.writeObject(rp.profesori.get(i)); 
-            }
-              
-            out.close(); 
-            file.close(); 
-              
-            System.out.println("Object has been serialized"); 
-  
-        } 
-          
-        catch(IOException ex) 
-        { 
-            System.out.println("IOException is caught"); 
-        } 
 		
-		//
 		glavniPanel = new JPanel();
 		glavniPanel.setLayout(new BorderLayout());
 		

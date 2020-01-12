@@ -1,11 +1,16 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
 
-public class Predmet extends ImenovanaKolekcija{
+public class Predmet implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String naziv;
 	private String sifra;
 	private String semestar;
@@ -80,24 +85,6 @@ public class Predmet extends ImenovanaKolekcija{
 			studenti.remove(par);
 		}
 	   
-	   public void insert(int index, Student par) {
-		   studenti.add(index, par);
-		   changedSet();
-		   notifyObservers();
-	   }
-
-
-	   @Override
-		public ImenovanaKolekcija getChild(int index) {
-			return null;
-			//return p.get(index);
-		}
-
-		@Override
-		public int getChildCount() {
-			
-			return studenti.size();
-		}
 		
 		public int getIndexOfChild(ImenovanaKolekcija kolekcija) {
 			

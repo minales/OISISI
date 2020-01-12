@@ -98,8 +98,8 @@ public class App {
 		 
 		 UIManager.put("Panel.background", new Color(249, 237, 246));
 		 
-		 Profesor p=new Profesor("Petar","Peric",2,3,4,"puskinova","bulevar","a","a","d");
-	 	 GlavniProzor.getRp().profesori.add(p);
+		 //Profesor p=new Profesor("Petar","Peric",2,3,4,"puskinova","bulevar","a","a","d");
+	 	 //GlavniProzor.getRp().profesori.add(p);
 		 
 		 //GlavniProzor glavniProzor = new GlavniProzor();
 				 
