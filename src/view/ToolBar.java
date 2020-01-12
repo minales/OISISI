@@ -20,7 +20,10 @@ import javax.swing.KeyStroke;
 import controller.BrisanjePredmetaAl;
 import controller.BrisanjeProfesoraAl;
 import controller.DodavanjePredmetaAL;
+import controller.DodavanjeStudentaActionListener;
 import controller.IzmenaPredmetaAL;
+import controller.IzmenaStudenta;
+import controller.PretragaStudenti;
 import controller.SearchPredmetiAl;
 import controller.SearchProfesori;
 import model.RoundButton;
@@ -141,7 +144,7 @@ public class ToolBar extends JToolBar {
 		//e.setBackground(new Color(226, 255, 253));
 		//d.setBackground(new Color(226, 255, 253));
 		//n.setIcon(new ImageIcon("slike/komp.png"));
-		n.setToolTipText("Add");
+		n.setToolTipText("Add new student");
 		e.setToolTipText("Edit");
 		d.setToolTipText("Delete");
 		p.setToolTipText("Search");
@@ -163,16 +166,27 @@ public class ToolBar extends JToolBar {
 		add(u);
 		add(p);
 		
+		DodavanjeStudentaActionListener dal = new DodavanjeStudentaActionListener();
+		n.addActionListener(dal);
 		DodavanjePredmetaAL np=new DodavanjePredmetaAL();
 		r.addActionListener(np);
+		
 		SearchPredmetiAl sp=new SearchPredmetiAl();
 		p.addActionListener(sp);
+		PretragaStudenti pretragaS=new PretragaStudenti();
+		p.addActionListener(pretragaS);
+		
 		IzmenaPredmetaAL izmeni=new IzmenaPredmetaAL();
 		e.addActionListener(izmeni);
+		
+	//	IzmenaStudenta izmenaS = new IzmenaStudenta();
+	//	e.addActionListener(izmenaS);
+		
 		BrisanjePredmetaAl obrisi=new BrisanjePredmetaAl();
 		d.addActionListener(obrisi);
 		SearchProfesori bp=new SearchProfesori();
 		p.addActionListener(bp);
+		
 
 		setFloatable(true);
 		setBackground(new Color(238, 213, 242));

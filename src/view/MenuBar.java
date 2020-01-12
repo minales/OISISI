@@ -17,8 +17,10 @@ import javax.swing.JOptionPane;
 
 import controller.BrisanjePredmetaAl;
 import controller.BrisanjeProfesoraAl;
-import controller.DodavanjePredmetaAL;
+import controller.BrisanjeStudenta;
+import controller.DodavanjeStudentaActionListener;
 import controller.IzmenaPredmetaAL;
+import controller.IzmenaStudenta;
 import controller.PredmetiActionListener;
 import model.Predmet;
 
@@ -74,11 +76,14 @@ public class MenuBar extends JMenuBar {
 		sel.add(ed);
 		sel.add(de);*/
 		
-		
+		DodavanjeStudentaActionListener dal = new DodavanjeStudentaActionListener();
+		par.addActionListener(dal);
+		IzmenaStudenta izmenaS = new IzmenaStudenta();
+		par1.addActionListener(izmenaS);
+		BrisanjeStudenta brisanjeS = new BrisanjeStudenta();
+		par2.addActionListener(brisanjeS);
 		IzmenaPredmetaAL izmeni=new IzmenaPredmetaAL();
 		p1.addActionListener(izmeni);
-		DodavanjePredmetaAL dodavanje=new DodavanjePredmetaAL();
-		p.addActionListener(dodavanje);
 		BrisanjePredmetaAl obrisi=new BrisanjePredmetaAl();
 		p2.addActionListener(obrisi);
 		BrisanjeProfesoraAl bp=new BrisanjeProfesoraAl();
