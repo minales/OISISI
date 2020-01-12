@@ -88,6 +88,9 @@ public class Profesor implements Serializable {
 			return getPredmeti().indexOf(kolekcija);
 			
 		}
+		public void UkloniProfesoraSaPredmeta(Profesor p) {
+			p=new Profesor("");
+		}
 
 		
 		public RadniProstor getRadniProstor() {

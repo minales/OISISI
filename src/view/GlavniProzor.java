@@ -164,7 +164,8 @@ public class GlavniProzor extends JFrame {
         sp2.setPreferredSize(new Dimension(screen.width/2, 114));
         
 
-		desno.add(sp2,c);
+		//SelectBar.tb3.doClick();
+        desno.add(sp2,c);
 		
 		glavniPanel.add(panel, BorderLayout.NORTH);
 		glavniPanel.add(getDesno(),BorderLayout.CENTER);

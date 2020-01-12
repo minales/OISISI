@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -200,23 +201,33 @@ public class IzmenaPredmetaAL implements ActionListener{
 				}
 				
 			});
-			ok.addActionListener(new ActionListener() {
-		
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
+				AbstractAction buttonPressed = new AbstractAction(){
 					
-					predmet.setNaziv(naziv.getText());
-					predmet.getProfesor().setIme(profesor.getText());
-					predmet.setGodinaStudija(godina.getText());
-					predmet.setS(sifra.getText());
-					predmet.setSemestar(semestar.getSelectedItem().toString());
-					
+					/**
+					 * 
+					 */
+					private static final long serialVersionUID = 1L;
 
-					SelectBar.tb3.doClick();
-					dodaj.dispose();
-				}
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						predmet.setNaziv(naziv.getText());
+						predmet.getProfesor().setIme(profesor.getText());
+						predmet.setGodinaStudija(godina.getText());
+						predmet.setS(sifra.getText());
+						predmet.setSemestar(semestar.getSelectedItem().toString());
+						
+
+						SelectBar.tb3.doClick();
+						dodaj.dispose();
+					}
+				};
+					
 				
-			});
+
+				ok.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER,0), "Enter_pressed");
+				ok.getActionMap().put("Enter_pressed", buttonPressed);
+				ok.addActionListener(buttonPressed);
+			
 		}
 	}
 		

@@ -24,6 +24,8 @@ import model.AktivniRadniProstor;
 import model.Profesor;
 import model.RadniProstor;
 import view.GlavniProzor;
+import view.SelectBar;
+
 import com.jtattoo.plaf.smart.SmartLookAndFeel;
 
 public class App {
@@ -104,6 +106,7 @@ public class App {
 		 //GlavniProzor glavniProzor = new GlavniProzor();
 				 
 	 	 GlavniProzor.getInstance().setVisible(true);
+	 	//SelectBar.tb3.doClick();
 	 	 
 	 	 
 

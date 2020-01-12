@@ -19,6 +19,7 @@ import javax.swing.JToggleButton;
 import javax.swing.SpringLayout;
 import javax.swing.table.DefaultTableModel;
 
+import model.ButtonProfesor;
 import model.Profesor;
 import model.RadniProstor;
 import view.GlavniProzor;
@@ -27,6 +28,7 @@ public class ProfesoriActionListener implements ActionListener {
 	
 	//private static GlavniProzor mf;
 	public static JTable tablep;
+	public JScrollPane spp;
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -48,7 +50,7 @@ public class ProfesoriActionListener implements ActionListener {
 			datap[i][8] =rp.profesori.get(i).getTitula();
 			datap[i][9] =rp.profesori.get(i).getZvanje();
 			
-			datap[i][10] =spisak;
+			/*datap[i][10] =spisak;
 			
 			String [] week = null;
 			Profesor p=rp.profesori.get(i);
@@ -100,14 +102,15 @@ public class ProfesoriActionListener implements ActionListener {
 			//datap[i][10] =Profesor.getPredmeti();         
 	}
 		
-	  
+	 */ 
 	        String[] columnNamesp = {"Ime", "Prezime","Datum rodjenja","Adresa stanovanja","Kontakt telefon",
 	        		"E-mail adresa","Adresa kancelarije","Broj licne karte","Titula","Zvanje",
 	        		"Spisak predmeta na kojima je profesor" }; 
 	        tablep = new JTable(datap, columnNamesp);
 	        tablep.setGridColor(Color.BLACK);
+	        new ButtonProfesor(tablep, 10);
 	        
-	        JScrollPane spp = new JScrollPane(tablep, 
+	        spp = new JScrollPane(tablep, 
 	                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 	                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	        spp.setPreferredSize(new Dimension(screen.width/2, 336));
@@ -120,7 +123,12 @@ public class ProfesoriActionListener implements ActionListener {
 	        mf.revalidate();
 	        mf.repaint();
 	        
-	        System.out.println("aaaaaaaaaa");
+	        //System.out.println("aaaaaaaaaa");
+		
+		}
+	}
+	public JScrollPane getSP() {
+		return spp;
 		
 	}
 

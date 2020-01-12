@@ -30,6 +30,11 @@ public class Predmet implements Serializable{
 		this.godinaStudija=g;
 	}
 	
+	public void UkloniProfesoraSaPredmeta(Profesor p) {
+		p=new Profesor("");
+		this.profesor=p;
+	}
+	
 	public String getNaziv(){
 		return naziv;
 		}
